@@ -1,0 +1,21 @@
+%% CURRENT STATE - Tra cứu thông báo trainer trong Discord lab VinAI Batch 02
+%% Tổng thời gian: 15-25 phút mỗi lần (chưa kể chờ trainer phản hồi)
+
+flowchart TD
+    Start([HV cần xác nhận<br/>thông tin trainer đã thông báo])
+
+    Start --> S1[1. Đoán channel<br/>announcements / batch-02 / q-and-a<br/>~2']
+    S1 --> S2[2. Search keyword Discord<br/>~3']
+    S2 --> S3{{"3. Lọc thread, đọc 5-10 message<br/>~8' - BOTTLENECK"}}
+    S3 -->|Tìm thấy phiên bản rõ| S6
+    S3 -->|Không chắc phiên bản cuối<br/>có đính chính?| S4
+
+    S4[4. Ping trainer hoặc bạn<br/>~5' viết câu hỏi]
+    S4 --> S5[5. Chờ phản hồi<br/>vài giờ đến 1-2 ngày]
+    S5 --> S6[6. Apply thông tin vào lab<br/>~2']
+    S6 --> End([Xong])
+
+    classDef bottleneck fill:#ffd6d6,stroke:#cc0000,color:#000,stroke-width:2px;
+    classDef wait fill:#fff3cd,stroke:#b58900,color:#000;
+    class S3 bottleneck
+    class S5 wait

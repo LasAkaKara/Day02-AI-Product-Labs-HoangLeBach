@@ -1,0 +1,36 @@
+%% FUTURE STATE - Tra cứu Discord lab có hỗ trợ Workflow (RAG đơn giản)
+%% Tổng thời gian kỳ vọng: dưới 6 phút mỗi lần
+%% AI chỉ làm 1 bước (retrieve + rank recency + tóm tắt + cite); HV verify link gốc.
+
+flowchart TD
+    Start([HV cần xác nhận<br/>thông tin trainer đã thông báo])
+
+    Start --> S1[1. HV gõ 1 câu hỏi vào tool<br/>web nội bộ hoặc bot Discord<br/>~0.5']
+
+    subgraph Auto[Tự động - chạy nền 6h/lần]
+        R1[(Rule script:<br/>snapshot 2-3 channel chính<br/>announcements / batch-02 / q-and-a)]
+    end
+
+    S1 --> S3[3. AI Workflow:<br/>- retrieve top-5 message liên quan<br/>- ưu tiên message mới nhất cùng topic<br/>  xử lý case đính chính<br/>- tóm tắt ngắn + cite link gốc<br/>~0.5']
+    R1 -.cung cấp index.-> S3
+
+    S3 --> S4{{"4. HV đọc tóm tắt<br/>+ click link gốc verify<br/>~3' - HUMAN BOUNDARY"}}
+
+    S4 -->|Đủ tin cậy| S5[5. Apply vào lab<br/>~2']
+    S4 -->|Confidence thấp<br/>hoặc tool nói không chắc| Fallback[Suggest hỏi trainer<br/>tại channel cụ thể]
+
+    S5 --> End([Xong])
+    Fallback --> End
+
+    classDef human fill:#d4edda,stroke:#2e7d32,color:#000,stroke-width:2px;
+    classDef auto fill:#e7f0ff,stroke:#1565c0,color:#000;
+    classDef ai fill:#f3e5f5,stroke:#7b1fa2,color:#000;
+    class S4 human
+    class R1 auto
+    class S3 ai
+
+    %% Boundary notes:
+    %% - AI KHÔNG tự trả lời câu hỏi mới (chỉ retrieve message đã có).
+    %% - AI KHÔNG truy cập DM / instructor-only channels.
+    %% - Mọi câu trả lời phải có ít nhất 1 link gốc.
+    %% - Fallback: tool die -> quay về workflow current; trainer đính chính sau -> snapshot 6h tiếp theo cập nhật.
