@@ -1,13 +1,13 @@
-# 03 — Individual Reflection (Hoàng Lê Bách)
+# 03 - Individual Reflection (Hoàng Lê Bách)
 
 > Reflection được mình tự viết lại theo trải nghiệm cá nhân. AI chỉ dùng để gợi câu hỏi tự soi, phản biện problem scan và giúp mình diễn đạt lại mạch suy nghĩ.
 
-## Phase 7.1 — Tôi đã tham gia vào phần nào?
+## Phase 7.1 - Tôi đã tham gia vào phần nào?
 
 | Hoạt động | Tôi đã làm  ? | Kết quả / ảnh hưởng |
 | --- | --- | --- |
 | Scan cá nhân | Scan các problems từ trải nghiệm làm lab có code: tìm lại code mẫu, debug lỗi cũ, viết documentation sau lab. Sau đó dùng AI để gợi thêm một số problem rộng hơn như gom ý tưởng nhóm, research nguồn, tracking progress. | Đóng góp 3 candidate chính liên quan coding workflow; đồng thời nhận ra nhiều problem khác cũng có chung pattern “thông tin đã có nhưng khó tìm lại đúng lúc”. |
-| Pitch Problem Card | Pitch Card #1 — Tìm lại code mẫu của trainer / bài cũ để reuse. Mình giải thích workflow: nhớ có code tương tự → mở repo/notebook → search → skim → copy → sửa. | Card được đưa vào cluster A vì cùng pattern với Discord search: tìm lại thông tin/tài nguyên đã tồn tại. Tuy nhiên card không được chọn riêng vì data source repo + notebook + Stack Overflow quá rộng. |
+| Pitch Problem Card | Pitch Card #1 - Tìm lại code mẫu của trainer / bài cũ để reuse. Mình giải thích workflow: nhớ có code tương tự → mở repo/notebook → search → skim → copy → sửa. | Card được đưa vào cluster A vì cùng pattern với Discord search: tìm lại thông tin/tài nguyên đã tồn tại. Tuy nhiên card không được chọn riêng vì data source repo + notebook + Stack Overflow quá rộng. |
 | Challenge bài của bạn khác | Hỏi Bá Đạt: “Nếu problem là miss thông báo, pin message hoặc FAQ có đủ không?” Hỏi Thành Đạt: “Nếu tóm tắt paper thì metric ‘summary tốt’ đo bằng gì?” Hỏi cả nhóm: “Nếu tool trả về message cũ đã bị trainer đính chính thì ai chịu trách nhiệm verify?” | Nhóm làm rõ pain chính không phải “Discord search kém chung chung”, mà là “đọc trúng bản cũ khi trainer đã đính chính”. Boundary sau đó có thêm yêu cầu cite link gốc và ưu tiên message mới nhất cùng topic. |
 | Gom trùng / cluster | Đề xuất gộp code reuse (#7), debug lỗi cũ (#8), Discord trainer (#1) và Discord thread cũ (#5) vào một pattern chung: “thông tin từng có nhưng khó tìm lại”.                                                                                              | Cluster A trở thành cluster mạnh nhất vì có 4/9 candidates và 3/3 thành viên đều liên quan.                                                                                                                   |
 | Chọn candidate problem | Ban đầu mình nghiêng về code reuse vì gần trải nghiệm cá nhân và có thể demo nhanh. Sau khi bị challenge về scope repo + Stack Overflow, mình đồng ý chọn phiên bản hẹp hơn: tra cứu thông báo / đính chính của trainer trong Discord. | Nhóm chọn được candidate có actor chung hơn, data source hẹp hơn và dễ validate hơn trong 4 tiếng lab. |
@@ -17,7 +17,7 @@
 | Rule / Workflow / Agent | Challenge nhóm ở câu hỏi: “AI có thật sự cần tự quyết bước tiếp theo không?” và “Nếu chỉ query → retrieve → summarize → cite thì có phải Agent không?” | Nhóm thống nhất chọn Workflow thay vì Agent. Rule vẫn dùng cho snapshot/pin, AI dùng cho semantic retrieval và tóm tắt. |
 | Decision | Ủng hộ quyết định Go với pilot nhỏ, nhưng nhấn mạnh cần fallback nếu không có Discord API/bot  . | Pilot được giữ nhỏ: index 2 channel, web nội bộ/snapshot thủ công trước, học viên verify link gốc trước khi apply. |
 
-## Phase 7.2 — Bảng dùng AI trong reflection
+## Phase 7.2 - Bảng dùng AI trong reflection
 
 | Phase | Tôi dùng AI để làm gì? | AI hữu ích ở đâu ? | AI sai / hời hợt ở đâu? | Tôi sửa gì bằng nhận định của mình? |
 | --- | --- | --- | --- | --- |
@@ -30,7 +30,7 @@
 | Decision                | Không để AI chốt decision. Mình chỉ dùng AI để check xem decision có thiếu rollback/fallback không.      | AI nhắc cần có fallback nếu tool sai hoặc không có API access.                                                                                                                 | AI đề xuất pilot hơi lớn, như index nhiều channel hoặc test nhiều học viên ngay.                                                                                 | Mình giữ pilot nhỏ: 2 channel, 5-7 HV, 2 tuần, đo thời gian tra cứu và số ping trainer trùng.                                                                        |
 | Reflection              | Dùng AI để gợi câu hỏi tự soi và giúp sắp xếp ý theo format example.                                     | Hữu ích để mình nhớ lại các đoạn mình đã đổi ý: từ code reuse sang Discord retrieval, từ Agent sang Workflow.                                                                  | Nếu copy nguyên, reflection sẽ nghe quá “sạch” và không giống trải nghiệm thật.                                                                                  | Mình chỉnh lại để giữ giọng cá nhân: mình có nền coding, ban đầu thiên về problem coding, sau đó bị nhóm challenge nên hạ scope.                                     |
 
-## Phase 7.3 — Reflection câu hỏi mở
+## Phase 7.3 - Reflection câu hỏi mở
 
 ### 1. Khi nào tôi nhận ra problem cá nhân của mình không nhất thiết là problem nhóm nên chọn?
 
